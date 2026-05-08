@@ -1009,6 +1009,65 @@
     </div>
   </footer>
 
+  <!-- n8n Chat Widget -->
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet">
+  <style>
+    :root {
+      --chat--color-primary: #2A1A10;
+      --chat--color-primary-shade-50: #3d2a1c;
+      --chat--color-primary-shade-100: #5C3D28;
+      --chat--color-secondary: #C8917B;
+      --chat--color-secondary-shade-50: #b87d68;
+      --chat--color-white: #FDFAF6;
+      --chat--color-light: #F8F3EC;
+      --chat--color-light-shade-50: #EEE5D6;
+      --chat--color-light-shade-100: #e0d5c6;
+      --chat--color-medium: #7A6356;
+      --chat--color-dark: #2A1A10;
+      --chat--color-disabled: #b0a090;
+      --chat--color-typing: #2A1A10;
+      --chat--header--background: #2A1A10;
+      --chat--header--color: #FDFAF6;
+      --chat--message--bot--background: #F8F3EC;
+      --chat--message--bot--color: #2A1A10;
+      --chat--message--user--background: #C8917B;
+      --chat--message--user--color: #FDFAF6;
+      --chat--toggle--background: #2A1A10;
+      --chat--toggle--hover--background: #5C3D28;
+      --chat--toggle--active--background: #5C3D28;
+      --chat--toggle--color: #FDFAF6;
+      --chat--toggle--size: 58px;
+      --chat--border-radius: 2px;
+      --chat--window--width: 380px;
+      --chat--window--height: 560px;
+      --chat--input--background: #FDFAF6;
+      --chat--input--border-color: #EEE5D6;
+      --chat--input--border-color-active: #C8917B;
+    }
+  </style>
+  <script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.esm.js';
+    createChat({
+      webhookUrl: 'https://trashymanner.app.n8n.cloud/webhook/6d6e642d-bc6f-422c-a865-e409fd7f40f9/chat',
+      mode: 'window',
+      defaultLanguage: 'en',
+      initialMessages: [
+        'Witaj w VÈLOUR Skin ✦',
+        'Jestem Twoją wirtualną konsultantką beauty. Zapytaj mnie o pielęgnację, składniki lub dopasuj rutynę do swojej cery.'
+      ],
+      i18n: {
+        en: {
+          title: 'VÈLOUR Beauty Chat',
+          subtitle: 'Twoja ekspertka pielęgnacji skóry',
+          footer: '',
+          getStarted: 'Rozpocznij konsultację',
+          inputPlaceholder: 'Zadaj pytanie o swoją skórę...',
+          closeButtonTooltip: 'Zamknij chat',
+        }
+      }
+    });
+  </script>
+
   <script>
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
